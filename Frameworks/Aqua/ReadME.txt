@@ -25,7 +25,7 @@ The configuration task is simple. The purpose of this tool is to enable POST for
 	landing = 'http://www.newgrounds.com/bbs'
 	keyword = 'loggedin'
 
-The 'Service' variable is simply used as a display text when a user opens the console. It will elucidate the the service being accessed with the framework to the user.
+The 'Service' variable is simply used as a display text when a user opens the console. It will elucidate the service being accessed with the framework to the user.
 
 The 'login_URL' is simply the url directed upon POST login. 
 
@@ -69,7 +69,7 @@ You will be prompted with login. Enter your username and password and if correct
 
 -  Data extraction:
 
-In 'Frame.py' you will notice the code responsible for the prompt. There's an infinite whie loop with an if construct subsequently branched. Configure the commands here. Use the 'find_between' function to gather data between specific tags as demonstrated in the code.
+In 'Frame.py' you will notice the code responsible for the prompt. There's an infinite while loop with an if construct subsequently branched. Configure the commands here. Use the 'find_between' function to gather data between specific tags as demonstrated in the code.
 
 elif cmd == 'who':
 	print '\n' + find_between( processReq.page.content,"Online: (<strong>","</strong>)" ) + '\n'
