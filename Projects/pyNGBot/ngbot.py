@@ -140,7 +140,14 @@ def cpPrompt():
 	while(True):
 		cmd = raw_input('Enter command: ')
 		if cmd == '?':
-			print '\n- vote (Vote on random entry)\n- timed (Vote on random entry every five minutes)\n- rapid (Rapidly vote on random entry)\n- info (Display your user information)\n- blam (Blam first new upload)\n- blam.all (Blam all entries under judgement)\n- blam.bot (Waits for new upload then blams it)\n'
+			#Commands and their descriptions
+			print ('\n- vote (Vote on random entry)'
+				'\n- timed (Vote on random entry every five minutes)\n- '
+				 'rapid (Rapidly vote on random entry)\n- '
+				 'info (Display your user information)\n- '
+				 'blam (Blam first new upload)\n- '
+				 'blam.all (Blam all entries under judgement)\n- '
+				 'blam.bot (Waits for new upload then blams it)\n')
 		elif cmd == 'vote':
 			pointMe = 1
 			v0te()
