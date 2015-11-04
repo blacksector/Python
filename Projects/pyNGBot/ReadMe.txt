@@ -5,6 +5,4 @@
 
 - Personal HTTP Newgrounds.com Bot,
 
-- Enjoy!
-
- 	       [Wayne]
+- Take a look.
