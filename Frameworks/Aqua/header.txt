@@ -1,0 +1,12 @@
+Access-Control-Allow-Origin:http://www.newgrounds.com
+CF-RAY:23fc40b4b24221c8-EWR
+Connection:keep-alive
+Content-Encoding:gzip
+Content-Type:text/html
+Date:Wed, 04 Nov 2015 00:37:51 GMT
+Server:cloudflare-nginx
+Set-Cookie:vmkIde5l3m=Rqq5O%2FHxCLPC2vPqz4Gw9LI15Ohit2vmY7UnFsSQaHbyLYRA9h75A4_iAeQ9ZxmbQAYTbzM5K3gqeMIgdO_F46Kfw9E142zdBP3daXlFhMRbmwNLLepNNuLuvEcJskv2KPXhbGxKjzZev9_aOF6XW53bIeqKI3zur7eOJynq0%3D; path=/; domain=.newgrounds.com; httponly
+Set-Cookie:NG_GG_username=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/
+Transfer-Encoding:chunked
+Vary:Accept-Encoding
+X-Powered-By:PHP/5.4.45-ng3
