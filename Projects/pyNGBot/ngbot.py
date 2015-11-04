@@ -1,4 +1,4 @@
-#Wayne Kenney 2015
+#Wayne Kenney 2015 
 
 import requests
 from random import randint
