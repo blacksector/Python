@@ -6,3 +6,5 @@
 - Personal HTTP Newgrounds.com Bot,
 
 - Enjoy!
+
+ 	       [Wayne]
