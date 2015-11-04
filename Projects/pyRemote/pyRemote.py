@@ -6,6 +6,8 @@
 #       |___|           |___|        
 # Can't get any more elite
 
+# Enables remote command execution via Gmail
+
 import imaplib
 import smtplib
 import time
