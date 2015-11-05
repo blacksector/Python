@@ -1,5 +1,11 @@
+                                  
+#  _____     _   _                   
+# |  _  |_ _| |_| |_ ___ ___ ___ ___ 
+# |   __| | |  _|   | . | . | -_|   |
+# |__|  |_  |_| |_|_|___|_  |___|_|_|
+#       |___|           |___|        
 # Py2PHP KSL
-# Pythogen
+# By Pythogen
 
 # Module responsible for POST data communication
 import requests
