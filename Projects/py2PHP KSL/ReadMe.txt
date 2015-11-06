@@ -9,7 +9,7 @@ This is simply a prototype in which to explore and illustrate a Python to PHP co
 
 [ Not yet compatible with py2exe ]
 
-Building without the currently used modules Requests(Replacing with urllib2) and Tkinter.
+Building without the currently used module Requests (Replacing with urllib2).
 
 Status: Under Construction...
 

