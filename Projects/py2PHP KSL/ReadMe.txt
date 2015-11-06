@@ -5,13 +5,11 @@
 | |\ \   |  (___  |   __   | |     | |  |  |  |  |  (___  
 | |_\ \_/       )_|  (__)  |_|    /__|  |__|  |_/       )_
 
-This is simply a prototype in which to explore and illustrate a Python to PHP communication concept. 
+This was simply a project in which to explore and illustrate a Python to PHP communication concept. 
 
-[ Not yet compatible with py2exe ]
+Now fully compatible with py2exe!
 
-Building without the currently used module Requests (Replacing with urllib2).
-
-Status: Under Construction...
+Status: Finished.
 
 Intended for legal uses only.
  ____           __    __                                        

