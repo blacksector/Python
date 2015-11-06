@@ -5,14 +5,15 @@
 | |\ \   |  (___  |   __   | |     | |  |  |  |  |  (___  
 | |_\ \_/       )_|  (__)  |_|    /__|  |__|  |_/       )_
 
+This is simply a prototype. [ Not yet compatible with py2exe ]
+
 Building without the currently used modules Requests(Replacing with urllib2) and Tkinter.
 
 Stay tuned!
 
 Status: Under Construction...
 
-Intended for legal uses.
-
+Intended for legal uses only.
  ____           __    __                                        
 /\  _`\        /\ \__/\ \                                       
 \ \ \L\ \__  __\ \ ,_\ \ \___     ___      __      __    ___    
