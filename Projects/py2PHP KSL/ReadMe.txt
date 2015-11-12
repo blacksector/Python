@@ -9,7 +9,7 @@ This was simply a project in which to explore and illustrate a Python to PHP com
 
 Now fully compatible with py2exe!
 
-Status: Finished.
+Update: The current window title is now displayed above the keys being input.
 
 Intended for legal uses only.
  ____           __    __                                        

