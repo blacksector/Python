@@ -25,7 +25,7 @@ def Main():
 	global oct4
 	global portNum
 	global chStart
-	oct1 = random.randint(1,255)
+	oct1 = random.randint(20,120)
 	oct2 = random.randint(1,255)
 	oct3 = random.randint(1,255)
 	oct4 = random.randint(1,255)
