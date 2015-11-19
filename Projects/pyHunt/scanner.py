@@ -62,9 +62,9 @@ def Scan():
 		print '| |_   |__|  |___|___|_|_|___|   _| |'
 		print '|___|                           |___|'
 		print '\n\n'
-		data = s.recv(1024)
-		print data
-		x = raw_input("Press ENTER to Copy Address and resume..")
+		#data = s.recv(1024)
+		#print data
+		x = raw_input("Press ENTER to Copy Address and resume..\n")
 		# Add successful IP to clipboard
 		addToClipBoard(ipGen)
 		
