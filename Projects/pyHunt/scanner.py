@@ -46,13 +46,19 @@ def Scan():
 	global ipGen
 	global portNum
 
+	# s as socket
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+	# Increase scan speed by setting timeout
+	s.settimeout(0.5)
+
 	try:
+		# Connection Attempt
 		s.connect((ipGen,int(portNum)))
-		#s.connect(('www.twitch.tv',80))
 	except socket.error as e:
+		# Connection Fail output
 		print ' - Connection failed on %s..' % (ipGen)
 	else:
+		# Connection Success output
 		print ' - Connection success! on %s! - [%s]' % (ipGen,i)
 		print '\n\n'
 		print ' ___                             ___ '
@@ -86,8 +92,11 @@ def Start():
 		Scan()
 		Main()
 
-	# Stop
-	# x = raw_input("ok")
+
+def Finished():
+	print '\n[Finished]'
+	fin = raw_input("\nScan Complete. Press ENTER to exit...\n")
 
 Main()
 Start()
+Finished()
