@@ -11,7 +11,7 @@ Now fully compatible with py2exe!
 
 Update: The current window title is now displayed above the keys being input.
 
-Intended for legal uses only.
+Intended for legal uses only. 
  ____           __    __                                        
 /\  _`\        /\ \__/\ \                                       
 \ \ \L\ \__  __\ \ ,_\ \ \___     ___      __      __    ___    
