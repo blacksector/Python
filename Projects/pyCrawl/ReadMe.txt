@@ -9,3 +9,7 @@
 - Constant External Device Detection for Autorun.ini exploit (Like Conficker OR Stuxnet),
 
 - Just for fun... No malicious intent!
+
+[Update 12/5/2015]
+
+- Discontinued.. Don't wish to resume constructing malware type projects..
