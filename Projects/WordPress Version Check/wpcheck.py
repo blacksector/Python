@@ -65,10 +65,16 @@ def cmdList():
 		# Check the proper directory that enables
 		# version disclosure
 		land[i] = land[i] + '/wp-login.php?'
+
 		# Get from next link in array
 		processReq.page = c.get(land[i])
+
+		# Grab version number inbetween specific elements
+		elOne = "buttons.min.css?ver="
+		elTwo = "' type='text/css'"
+
 		# Check and print
-		print '\nSite: %s\nVersion: [ ' % (land[i]) + find_between( processReq.page.content,"buttons.min.css?ver=","' type='text/css'" ) + ' ]\n'
+		print '\nSite: %s\nVersion: [ ' % (land[i]) + find_between(processReq.page.content, elOne, elTwo ) + ' ]\n'
 
 # Console prompt after successful login
 def cpPrompt():
