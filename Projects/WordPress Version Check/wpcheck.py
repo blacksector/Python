@@ -44,8 +44,8 @@ def main():
 	keyword = 'loggedin'
 
 	#Define username
-	#USERNAME = raw_input("\nPlease enter a username: ")
-	USERNAME = 'Pythogen'
+	USERNAME = raw_input("\n[?] Enter console handle: ")
+	#USERNAME = 'Pythogen'
 
 	#Display Banner
 print '__      _____  __   __                ___ _           _    '
@@ -62,26 +62,33 @@ def cmdList():
 	# Cycle for loop from 0 to size of array
 	for i in range(0, len(land)):
 
-		# Check the proper directory that enables
-		# version disclosure
+		# Home directory contained in array for display in console
+		home = land[i]
+
+		# Concatenate for landing page
 		land[i] = land[i] + '/wp-login.php?'
 
 		# Get from next link in array
 		processReq.page = c.get(land[i])
+
+		# Fully extracted source
+		src = processReq.page.content
 
 		# Grab version number inbetween specific elements
 		elOne = "buttons.min.css?ver="
 		elTwo = "' type='text/css'"
 
 		# Check and print
-		print '\nSite: %s\nVersion: [ ' % (land[i]) + find_between(processReq.page.content, elOne, elTwo ) + ' ]\n'
+		print '\nSite: %s\n[i] Version: [ ' % (home) + find_between(src, elOne, elTwo ) + ' ]\n'
 
 # Console prompt after successful login
 def cpPrompt():
 
 	# Command line Construct. Add commands here..
-
 	cmdList()
+
+	# Finished checking. Go to prompt
+	print '\n[!] Check complete.\n'
 
 	while(True):
 
@@ -118,8 +125,14 @@ def processReq():
 	
 		#Continuous auth checking. Line by line
 		while(True):
-			print '\nWelcome, ' + USERNAME + '\n'
-			#Login success. Go to command console
+
+			# Greetings friend
+			print '\n - Welcome, ' + USERNAME + '.\n'
+
+			# Starting..
+			print '\n[!] Grabbing from list...\n'
+
+			# Go to command console
 			cpPrompt()
 
 
