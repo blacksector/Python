@@ -10,19 +10,19 @@
 
 # Frame.py:
 
-#Modules
+# Modules
 import requests
 from random import randint
 import time
 import os
 
-#Program Information
+# Program Information
 print '\n(Powered by PyAqua-1.0 Framework - Wayne Kenney)'
 
-#Main Routine.
+# Main Routine.
 def main():
 
-	#Enable access to variables anywhere
+	# Enable access to variables anywhere
 	global USERNAME
 	global PASSWORD
 	global login_URL
@@ -31,23 +31,23 @@ def main():
 	global keyword
 	global attempts
 
-	#Site's Name (Banner)
+	# Site's Name (Banner)
 	Service = 'WordPress Version - Check'
 
-	#login_URL redirected to after login_URL containing keyword
-	land = ['http://www.thatvideogameblog.com/',
-			'http://ukresistance.co.uk/',
-			'http://ohsheglows.com/',
-			'http://www.runningonrealfood.com/']
+	# Read urls (home base directory) from text file
+	# index dir (wp_content accessable)
+	# Ex: http://server.com/
+	text_file = open("list.txt", "r")
 
-	#The keyword that indicates successful login_URL detection
-	keyword = 'loggedin'
+	# split out new line in each array element
+	# and put in variable 'land'
+	land = text_file.read().split('\n')
 
 	#Define username
 	USERNAME = raw_input("\n[?] Enter console handle: ")
 	#USERNAME = 'Pythogen'
 
-	#Display Banner
+#Display Banner
 print '__      _____  __   __                ___ _           _    '
 print '\ \    / / _ \ \ \ / /__ _ _   ___   / __| |_  ___ __| |__ '
 print ' \ \/\/ /|  _/  \ V / -_)  _| |___| | (__|   \/ -_) _| / / '
@@ -138,3 +138,5 @@ def processReq():
 
 #Process Auth Details
 processReq()
+
+
