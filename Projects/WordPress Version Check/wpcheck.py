@@ -43,19 +43,19 @@ def main():
 	# and put in variable 'land'
 	land = text_file.read().split('\n')
 
-	#Define username
+	# Define username
 	USERNAME = raw_input("\n[?] Enter console handle: ")
 	#USERNAME = 'Pythogen'
 
-#Display Banner
+# Display Banner
 print '__      _____  __   __                ___ _           _    '
 print '\ \    / / _ \ \ \ / /__ _ _   ___   / __| |_  ___ __| |__ '
 print ' \ \/\/ /|  _/  \ V / -_)  _| |___| | (__|   \/ -_) _| / / '
 print '  \_/\_/ |_|     \_/\___|_|          \___|_||_\___\__|_\_\ '
                                                                                                 
-
-#Go to main 
+# Go to main routine
 main()
+
 def cmdList():
 
 	# Call function to extract data between tags. Function name included in var for global access
@@ -81,7 +81,7 @@ def cmdList():
 		# Check and print
 		print '\nSite: %s\n[i] Version: [ ' % (home) + find_between(src, elOne, elTwo ) + ' ]\n'
 
-# Console prompt after successful login
+# Console prompt
 def cpPrompt():
 
 	# Command line Construct. Add commands here..
@@ -103,12 +103,12 @@ def cpPrompt():
 		elif cmd == 'quit':
 			quit()
 
-# Clipboard function
+# Clipboard function [Not used in this script..]
 def addToClipBoard(text):
     command = 'echo ' + text.strip() + '| clip'
     os.system(command)
 	
-#Used for finding values between tags
+# Used for finding values between tags
 def find_between( s, first, last ):
     try:
         start = s.index( first ) + len( first )
@@ -117,13 +117,12 @@ def find_between( s, first, last ):
     except ValueError:
         return ""
 
-
 def processReq():
-	#Shorten method
+
+	# Shorten method
 	global c
 	with requests.Session() as c:
 	
-		#Continuous auth checking. Line by line
 		while(True):
 
 			# Greetings friend
@@ -136,7 +135,7 @@ def processReq():
 			cpPrompt()
 
 
-#Process Auth Details
+# Process Auth Details
 processReq()
 
 
