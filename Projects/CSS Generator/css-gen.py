@@ -23,6 +23,9 @@ centerdiv = ('\ndisplay: block;'
 # Center text object [suck as p element]
 centertext = ('\ntext-align: center;\n')
 
+# Round borders
+roundbord = ('\nborder: 1px solid;\nborder-radius: 25px;\n')
+
 def main():
 	# Globalize initial class dec
 	global cmd
@@ -41,7 +44,8 @@ def main():
 def styling():
 	# Wait for styles
 	global inArr
-	inArr = ['','']
+	# Occupy as many spaces as commands...
+	inArr = ['','','']
 
 	# Infinite loop
 	while True:
@@ -50,19 +54,26 @@ def styling():
 		if cmd2 == "?":
 			print cmds
 		else:
+
 			# Check for css command
 			check = cmd2.find("center.div")
 			check2 = cmd2.find("center.text")
+			check3 = cmd2.find("border.round")
 
 			# If not found then..
 			if check != -1:
 				# Add to array space
 				inArr[0] = centerdiv
 
-			# Check fo second command
+			# Check for second command
 			if check2 != -1:
 				# Include second command to array space
 				inArr[1] = centertext
+
+			# Check for third command
+			if check3 != -1:
+				# Include second command to array space
+				inArr[2] = roundbord
 
 			# Open selector
 			print ('\n.%s { ' % (cmd))
