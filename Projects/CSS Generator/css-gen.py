@@ -18,13 +18,13 @@ cmds = ("\n1. Start by entering class name"
 centerdiv = ('\ndisplay: block;'
 					'\nmargin-left: auto;'
 					'\nmargin-right: auto;'
-					'\nwidth: 100%%;\n')
+					'\nwidth: 100%%;')
 
 # Center text object [such as p element]
-centertext = ('\ntext-align: center;\n')
+centertext = ('\ntext-align: center;')
 
 # Round borders
-roundbord = ('\nborder: 1px solid;\nborder-radius: 25px;\n')
+roundbord = ('\nborder: 1px solid;\nborder-radius: 25px;')
 
 def main():
 	# Globalize initial class dec
@@ -37,11 +37,15 @@ def main():
 		if cmd == "?":
 			print cmds
 		else:
-			#go to styles
+			# Go to style method
 			styling()
 
 
 def styling():
+
+	# File writing. Generate to text file
+	fw = open('output.txt','w')
+
 	# Wait for styles
 	global inArr
 	# Occupy as many spaces as commands...
@@ -82,10 +86,12 @@ def styling():
 			# Loop array length
 			for i in inArr:
 				# Include code
+				fw.writelines(i)
 				print i
 				# End loop
 
 			# Close selector
 			print ('}\n')
+
 
 main()
