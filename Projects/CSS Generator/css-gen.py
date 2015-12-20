@@ -20,7 +20,7 @@ centerdiv = ('\ndisplay: block;'
 					'\nmargin-right: auto;'
 					'\nwidth: 100%%;\n')
 
-# Center text object [suck as p element]
+# Center text object [such as p element]
 centertext = ('\ntext-align: center;\n')
 
 # Round borders
