@@ -7,12 +7,20 @@
 # \______  /_______  /_______  /          \______  /\___  >___|  /\___  >__|  (____  /__|  \____/|__|   
 #        \/        \/        \/                  \/     \/     \/     \/           \/                  
 
+# Built for personal convenience.
+# More commands to be added...
 
 # Globalize help var
 cmds = ("\n1. Start by entering class name"
 			"\n2. Enter the type of styles to be included "
-			"(seperated by commas)\n\nStyles:\n\ncenter.text"
-			"\ncenter.div\nborder.round\n\nMore to be included...\n")
+			"(seperated by commas)\n"
+			"\nStyles:\n"
+			"\ncenter.text"
+			"\ncenter.div"
+			"\nborder.round"
+			"\nbgimg.center"
+			"\nfix.footer"
+			"\n\nMore to be included...\n")
 
 # Center div object inclusion code
 centerdiv = ('\ndisplay: block;'
@@ -25,6 +33,18 @@ centertext = ('\ntext-align: center;')
 
 # Round borders
 roundbord = ('\nborder: 1px solid;\nborder-radius: 25px;')
+
+# Fixed footer
+fixfoot = ('\nposition:fixed;'
+   '\nleft:0px;'
+   '\nbottom:0px;'
+   '\nheight:30px;'
+   '\nwidth:100%;'
+   '\nbackground:#999;')
+
+# Empty bg name var
+bgname = ""
+
 
 def main():
 	# Globalize initial class dec
@@ -43,13 +63,12 @@ def main():
 
 def styling():
 
-	# File writing. Generate to text file
-	fw = open('output.txt','w')
-
-	# Wait for styles
+	global fw
 	global inArr
+	global bgname
+
 	# Occupy as many spaces as commands...
-	inArr = ['','','']
+	inArr = ['','','','','']
 
 	# Infinite loop
 	while True:
@@ -59,10 +78,15 @@ def styling():
 			print cmds
 		else:
 
+			# File writing. Generate to text file
+			fw = open('output.txt','w')
+			
 			# Check for css command
 			check = cmd2.find("center.div")
 			check2 = cmd2.find("center.text")
 			check3 = cmd2.find("border.round")
+			check4 = cmd2.find("bgimg.center")
+			check5 = cmd2.find("fix.footer")
 
 			# If not found then..
 			if check != -1:
@@ -76,11 +100,32 @@ def styling():
 
 			# Check for third command
 			if check3 != -1:
-				# Include second command to array space
+				# Include third command to array space
 				inArr[2] = roundbord
+
+			# Check for fourth command
+			if check4 != -1:
+
+				# Enter bg file name + format extension
+				bgname = raw_input("The background image file: ")
+
+				# Include that file in code
+				bgimgcenter = ('\nbackground-image: url("%s");'
+				'\nbackground-repeat: no-repeat;'
+				'\nbackground-attachment: fixed;'
+				'\nbackground-size: cover;' % (bgname))
+
+				# Include fourth command to array space
+				inArr[3] = bgimgcenter
+
+			# Check for fifth command
+			if check5 != -1:
+				# Include fifth command to array space
+				inArr[4] = fixfoot
 
 			# Open selector
 			print ('\n.%s { ' % (cmd))
+			fw.writelines('\n.%s { ' % (cmd))
 
 			# Generate according to input
 			# Loop array length
@@ -92,6 +137,8 @@ def styling():
 
 			# Close selector
 			print ('}\n')
+			fw.writelines('}\n')
+			fw.close()
 
 
 main()
