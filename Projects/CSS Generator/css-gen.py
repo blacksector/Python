@@ -1,14 +1,20 @@
-# Wayne Kenney 2015
+# Wayne Kenney 2015 - Pythogen
 
-#_________   _________ _________           ________                                   __                
-#\_   ___ \ /   _____//   _____/          /  _____/  ____   ____   ________________ _/  |_  ___________ 
-#/    \  \/ \_____  \ \_____  \   ______ /   \  ____/ __ \ /    \_/ __ \_  __ \__  \\   __\/  _ \_  __ \
-#\     \____/        \/        \ /_____/ \    \_\  \  ___/|   |  \  ___/|  | \// __ \|  | (  <_> )  | \/
-# \______  /_______  /_______  /          \______  /\___  >___|  /\___  >__|  (____  /__|  \____/|__|   
-#        \/        \/        \/                  \/     \/     \/     \/           \/                  
+# _________   _________ _________           ________                                   __                
+# \_   ___ \ /   _____//   _____/          /  _____/  ____   ____   ________________ _/  |_  ___________ 
+# /    \  \/ \_____  \ \_____  \   ______ /   \  ____/ __ \ /    \_/ __ \_  __ \__  \\   __\/  _ \_  __ \
+# \     \____/        \/        \ /_____/ \    \_\  \  ___/|   |  \  ___/|  | \// __ \|  | (  <_> )  | \/
+#  \______  /_______  /_______  /          \______  /\___  >___|  /\___  >__|  (____  /__|  \____/|__|   
+#         \/        \/        \/                  \/     \/     \/     \/           \/                  
 
 # Built for personal convenience.
 # More commands to be added...
+
+#  ___              ___                       _          _    ___ ___ ___   _ 
+# | _ \_ _ ___ ___ / __|___ _ _  ___ _ _ __ _| |_ ___ __| |  / __/ __/ __| (_)
+# |  _/ '_/ -_)___| (_ / -_) ' \/ -_) '_/ _` |  _/ -_) _` | | (__\__ \__ \  _ 
+# |_| |_| \___|    \___\___|_||_\___|_| \__,_|\__\___\__,_|  \___|___/___/ (_)                                                                            
+
 
 # Globalize help var
 cmds = ("\n1. Start by entering class name"
@@ -32,7 +38,8 @@ centerdiv = ('\ndisplay: block;'
 centertext = ('\ntext-align: center;')
 
 # Round borders
-roundbord = ('\nborder: 1px solid;\nborder-radius: 25px;')
+roundbord = ('\nborder: 1px solid;'
+				'\nborder-radius: 25px;')
 
 # Fixed footer
 fixfoot = ('\nposition:fixed;'
@@ -44,6 +51,23 @@ fixfoot = ('\nposition:fixed;'
 
 # Empty bg name var
 bgname = ""
+
+def cssIndex():
+	# Enter bg file name + format extension
+	bgname = raw_input("The background image file: ")
+
+	# Include that file in code
+	bgimgcenter = ('\nbackground-image: url("%s");'
+	'\nbackground-repeat: no-repeat;'
+	'\nbackground-attachment: fixed;'
+	'\nbackground-size: cover;' % (bgname))
+
+
+#  ___                       _             _ 
+# | _ \_ _ ___  __ ___ _____(_)_ _  __ _  (_)
+# |  _/ '_/ _ \/ _/ -_|_-<_-< | ' \/ _` |  _ 
+# |_| |_| \___/\__\___/__/__/_|_||_\__, | (_)
+#                                  |___/     
 
 
 def main():
@@ -106,14 +130,8 @@ def styling():
 			# Check for fourth command
 			if check4 != -1:
 
-				# Enter bg file name + format extension
-				bgname = raw_input("The background image file: ")
-
-				# Include that file in code
-				bgimgcenter = ('\nbackground-image: url("%s");'
-				'\nbackground-repeat: no-repeat;'
-				'\nbackground-attachment: fixed;'
-				'\nbackground-size: cover;' % (bgname))
+				# Call function requiring input
+				cssIndex()
 
 				# Include fourth command to array space
 				inArr[3] = bgimgcenter
@@ -140,5 +158,5 @@ def styling():
 			fw.writelines('}\n')
 			fw.close()
 
-
+# Call main routine
 main()
