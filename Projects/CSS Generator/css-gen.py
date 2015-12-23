@@ -49,10 +49,15 @@ fixfoot = ('\nposition:fixed;'
    '\nwidth:100%;'
    '\nbackground:#999;')
 
+
 # Empty bg name var
 bgname = ""
 
+
 def cssIndex():
+	# Globalize CSS
+	global bgimgcenter
+
 	# Enter bg file name + format extension
 	bgname = raw_input("The background image file: ")
 
@@ -105,41 +110,49 @@ def styling():
 			# File writing. Generate to text file
 			fw = open('output.txt','w')
 			
+			# Warning...
+			# gets a bit messy here:
+
+			# Conditional check values
+			check = ['center.div','center.text','border.round','bgimg.center','fix.footer']
+
+			# Confirmation copy
+			confirm = check
+
 			# Check for css command
-			check = cmd2.find("center.div")
-			check2 = cmd2.find("center.text")
-			check3 = cmd2.find("border.round")
-			check4 = cmd2.find("bgimg.center")
-			check5 = cmd2.find("fix.footer")
 
-			# If not found then..
-			if check != -1:
-				# Add to array space
-				inArr[0] = centerdiv
-
-			# Check for second command
-			if check2 != -1:
-				# Include second command to array space
-				inArr[1] = centertext
-
-			# Check for third command
-			if check3 != -1:
-				# Include third command to array space
-				inArr[2] = roundbord
-
-			# Check for fourth command
-			if check4 != -1:
-
-				# Call function requiring input
-				cssIndex()
-
-				# Include fourth command to array space
-				inArr[3] = bgimgcenter
-
-			# Check for fifth command
-			if check5 != -1:
-				# Include fifth command to array space
-				inArr[4] = fixfoot
+			for i in check:
+				# Find command in array
+				check = cmd2.find(i)
+				
+				# if i equal to confirm value 0 then..
+				if i==confirm[0]:
+					# If found then..
+					if check != -1:
+						# Add to array space
+						inArr[0] = centerdiv
+				elif i==confirm[1]:
+					# Check for second command
+					if check != -1:
+						# Include second command to array space
+						inArr[1] = centertext
+				elif i==confirm[2]:
+					# Check for third command
+					if check != -1:
+						# Include third command to array space
+						inArr[2] = roundbord
+				elif i==confirm[3]:
+					# Check for fourth command
+					if check != -1:
+						# Call function requiring input
+						cssIndex()
+						# Include fourth command to array space
+						inArr[3] = bgimgcenter
+				elif i==confirm[4]:
+					# Check for fifth command
+					if check != -1:
+						# Include fifth command to array space
+						inArr[4] = fixfoot
 
 			# Open selector
 			print ('\n.%s { ' % (cmd))
