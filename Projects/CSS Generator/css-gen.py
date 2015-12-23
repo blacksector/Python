@@ -120,17 +120,17 @@ def styling():
 			confirm = check
 
 			# Check for css command
-
 			for i in check:
 				# Find command in array
 				check = cmd2.find(i)
 				
-				# if i equal to confirm value 0 then..
+				# if i equal to confirm index 0 then..
 				if i==confirm[0]:
 					# If found then..
 					if check != -1:
 						# Add to array space
 						inArr[0] = centerdiv
+				# Else if i equal to confirm index 1 then..
 				elif i==confirm[1]:
 					# Check for second command
 					if check != -1:

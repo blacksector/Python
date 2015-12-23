@@ -35,7 +35,7 @@ def main():
 	Service = 'WordPress Version - Check'
 
 	# Read urls (home base directory) from text file
-	# index dir (wp_content accessable)
+	# index dir (wp_content accessible)
 	# Ex: http://server.com/
 	text_file = open("list.txt", "r")
 
