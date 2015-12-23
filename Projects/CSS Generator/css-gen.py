@@ -81,6 +81,7 @@ def main():
 
 	# Wait for class name
 	while True:
+		# Get command input
 		cmd = raw_input("Enter Class (? for list): ")
 		# Display commands
 		if cmd == "?":
@@ -92,11 +93,12 @@ def main():
 
 def styling():
 
+	# Some global properties
 	global fw
 	global inArr
 	global bgname
 
-	# Occupy as many spaces as commands...
+	# Occupy as many spaces as commands
 	inArr = ['','','','','']
 
 	# Infinite loop
