@@ -20,9 +20,6 @@ import time
 # Program Information
 print '\nPyAqua-1.0 - Requests Module Prototype\nBy Pythogen'
 
-uname = 'a'
-pwd = 'a'
-
 # Main Routine.
 def main():
 
