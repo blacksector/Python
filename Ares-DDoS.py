@@ -233,7 +233,7 @@ def run(action, dtype, num_req):
         # Argument passed from Ares panel
         server = action # Host put in server     
 
-        secUDP = int(num_req) # Specified number of requests
+        secUDP = int(num_req) # Specified number of seconds
 
         # Call function to begin UDP Attack
         floodUDP()   
