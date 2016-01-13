@@ -6,7 +6,7 @@ https://github.com/sweetsoftware/Ares/
 
 My contribution:
 
-I'm writing a DDoS module for the botnet. So far I've finished the HTTP (LOIC emulation) and UDP Stress features for the module. 
+I'm writing a DDoS module for the botnet. So far I've finished the HTTP (LOIC emulation) and UDP Stress features.
 
 Features to be included soon: SYN Flood, DRDoS (Portmap) and SNMP reflection.
 
