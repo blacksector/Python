@@ -88,7 +88,7 @@ def main():
 		if choose == "class":
 
 			# Get command input
-			cmd = raw_input("Enter Class (? for list): ")
+			cmd = raw_input("Enter Class Name: ")
 			cmd = ".%s" % (cmd)
 			styling()
 
