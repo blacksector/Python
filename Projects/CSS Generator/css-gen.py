@@ -26,6 +26,7 @@ cmds = ("\n1. Start by entering class name"
 			"\nborder.round"
 			"\nbgimg.center"
 			"\nfix.footer"
+			"\nclear"
 			"\n\nMore to be included...\n")
 
 # Center div object inclusion code
@@ -81,14 +82,24 @@ def main():
 
 	# Wait for class name
 	while True:
-		# Get command input
-		cmd = raw_input("Enter Class (? for list): ")
-		# Display commands
-		if cmd == "?":
-			print cmds
-		else:
-			# Go to style method
+
+		choose = raw_input("'body' or 'class'?: ")
+
+		if choose == "class":
+
+			# Get command input
+			cmd = raw_input("Enter Class (? for list): ")
+			cmd = ".%s" % (cmd)
 			styling()
+
+		elif choose == "body":
+
+			cmd = "body"
+			styling()
+
+		else:
+
+			print "\nYou must specify a valid element or class selector.\n"
 
 
 def styling():
@@ -99,7 +110,7 @@ def styling():
 	global bgname
 
 	# Occupy as many spaces as commands
-	inArr = ['','','','','']
+	inArr = ['','','','','','']
 
 	# Infinite loop
 	while True:
@@ -116,7 +127,7 @@ def styling():
 			# gets a bit messy here:
 
 			# Conditional check values
-			check = ['center.div','center.text','border.round','bgimg.center','fix.footer']
+			check = ['center.div','center.text','border.round','bgimg.center','fix.footer','clear']
 
 			# Confirmation copy
 			confirm = check
@@ -155,9 +166,14 @@ def styling():
 					if check != -1:
 						# Include fifth command to array space
 						inArr[4] = fixfoot
+				elif i==confirm[5]:
+					if check != -1:
+						for cl in range(len(inArr)):
+							inArr[cl]=""
+						print "\nCleared.\n"
 
 			# Open selector
-			print ('\n.%s { ' % (cmd))
+			print ('\n%s { ' % (cmd))
 			fw.writelines('\n.%s { ' % (cmd))
 
 			# Generate according to input
