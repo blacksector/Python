@@ -37,7 +37,7 @@ def Cycle():
 	global a
 	global b
 	# Represents user values
-	user = ['Mike','shawn','Ted']
+	user = ['Mike','shawn','Ted','Skippy']
 	# Represents password values
 	pw = ['a','aa','aaa','b', 'bb', 'bbb', 'c', 'cc', 'ccc']
 
