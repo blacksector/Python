@@ -36,10 +36,16 @@ def Cycle():
 	# Keep slice values accessable
 	global a
 	global b
-	# Represents user values
-	user = ['Mike','shawn','Ted','Skippy']
-	# Represents password values
-	pw = ['a','aa','aaa','b', 'bb', 'bbb', 'c', 'cc', 'ccc']
+
+	# Load Username List
+	text_file = open("users.txt", "r")
+	# Load Password List
+	text_file2 = open("pw.txt", "r")
+
+	# Username Split Newline 
+	user = text_file.read().split('\n')
+	# Password Split Newline
+	pw = text_file2.read().split('\n')
 
 	# User cycle
 	for u in user:
