@@ -119,6 +119,9 @@ def processReq():
 					#Login success. Go to command console
 					cpPrompt()
 
+		print "\nNothing found..\n"
+		cpPrompt()
+
 
 #Process Auth Details
 processReq()
