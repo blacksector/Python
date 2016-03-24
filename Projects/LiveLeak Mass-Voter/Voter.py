@@ -35,7 +35,7 @@ def Complete():
 	#Indicate completion
 	ext = raw_input("\n Operation Complete! Press Enter to exit..\n")
 
-#Console prompt after successful login
+#Console prompt
 def cpPrompt():
 	global c
 	global commentID
@@ -123,6 +123,7 @@ def cpPrompt():
 				USERNAME = 'username'
 				PASSWORD = 'password'
 
+			#Bot number 2
 			elif sel == 2:
 
 				head2 = {
