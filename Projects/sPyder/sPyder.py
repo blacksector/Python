@@ -33,8 +33,6 @@ scanDrive = 'C:\\'
 # Drive to Save Maps/Logs 	[Save results to this drive]
 saveDrive = 'F:\\'
 
-# Create Window Title Log File (Logs) - \Logs\
-wnt = open('%sHDSpider\Logs\Window_Titles.txt' % (saveDrive),'w')
 
 # Folder Structure/Creation Routine
 def createFolder():
@@ -74,6 +72,7 @@ def getWindowTitle():
 
 # File Mapping Routine
 def dMap(dlet):
+	global wnt 
 
 	# Using specified base dir and os.walk to crawl
 	folder = dlet
@@ -82,6 +81,10 @@ def dMap(dlet):
 	createFolder()
 
 	# Maps/Logs (F:\Logs\Maps\)
+	# Create Window Title Log File (Logs) - \Logs\
+	wnt = open('%sHDSpider\Logs\Window_Titles.txt' % (saveDrive),'w')
+	
+	# Create text Files for Map Lags
 	exes = open('%sHDSpider\Maps\exeList.txt' % (saveDrive),'w')
 	txts = open('%sHDSpider\Maps\TxtList.txt' % (saveDrive),'w')
 	docs = open('%sHDSpider\Maps\docList.txt' % (saveDrive),'w')
