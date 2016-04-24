@@ -9,7 +9,7 @@
 
 # Monitor Activity (Optional):
 
-# Logs/Records active windows
+# Logs/Records active windows 
 
 # Import Modules
 import os
