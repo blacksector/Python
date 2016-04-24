@@ -18,7 +18,7 @@ Wayne Kenney - 2016
                                    ||
                                    \\
                                     '
-Hard-Drive Mapper (sPyder)
+Hard Drive Mapper (sPyder)
 
 This script creates text logs of the OS file structure,
 
