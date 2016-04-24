@@ -64,7 +64,7 @@ def getWindowTitle():
 	print "\n\n[ %s ]\n" % ( title.value)
 
 	# Window Logs (Logs) - \Logs\
-	wnt.writelines('%s' % title.value + '\n')
+	wnt.writelines('%s : %s' % (title.value,time.strftime("%I:%M:%S")) + '\n')
 
 	# Close
 	kernel32.CloseHandle(hwnd)
@@ -230,11 +230,17 @@ def main():
 	# Save to : /Maps/
 	dMap(scanDrive)
 
-	# 2) Start Monitoring (Logs)
-	# Save to : /Logs/
-	while(True):
-		# Call Counter Routine
-		cnter()
+	next = raw_input("\nWould you like to monitor this computer's activity? (y/n): ")
+	if next == 'y':
+
+		# 2) Start Monitoring (Logs)
+		# Save to : /Logs/
+		while(True):
+			# Call Counter Routine
+			cnter()
+
+	else:
+		return 0
 		
 # Activate
 main()
