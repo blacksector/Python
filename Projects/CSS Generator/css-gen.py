@@ -30,20 +30,20 @@ cmds = ("\n1. Start by entering class name"
 			"\n\nMore to be included...\n")
 
 # Center div object inclusion code
-centerdiv = ('\ndisplay: block;'
+centerdiv = ('\n#Center\ndisplay: block;'
 					'\nmargin-left: auto;'
 					'\nmargin-right: auto;'
 					'\nwidth: 100%%;')
 
 # Center text object [such as p element]
-centertext = ('\ntext-align: center;')
+centertext = ('\n#Center Text\ntext-align: center;')
 
 # Round borders
-roundbord = ('\nborder: 1px solid;'
+roundbord = ('\n#Rounded Borders\nborder: 1px solid;'
 				'\nborder-radius: 25px;')
 
 # Fixed footer
-fixfoot = ('\nposition:fixed;'
+fixfoot = ('\n#Fix Footer\nposition:fixed;'
    '\nleft:0px;'
    '\nbottom:0px;'
    '\nheight:30px;'
