@@ -121,7 +121,7 @@ def dMap(dlet):
       						pass
         					
         			# Text File Extraction..
-        			elif i==2:
+        			if i==2:
 
         				# Condition for TXT
         				if file.endswith(".txt"):
@@ -132,7 +132,7 @@ def dMap(dlet):
 							pass
 					
 					# Document Extraction..
-					elif i==3:
+					if i==3:
 
 						# Condition for regular documents
 						if file.endswith(".doc"):
@@ -143,7 +143,7 @@ def dMap(dlet):
 							pass
 
 					# Word Docx Extraction..
-					elif i==4:
+					if i==4:
 
 						# Condition for Microsoft Word documents
 						if file.endswith(".docx"):
@@ -154,7 +154,7 @@ def dMap(dlet):
 							pass
 					
 					# Shortcut Extraction..
-					elif i==5:
+					if i==5:
 
 						# Condition for Shortcut Files
 						if file.endswith(".lnk"):
@@ -165,7 +165,7 @@ def dMap(dlet):
 							pass
 
 					# JPeg Extraction..
-					elif i==6:
+					if i==6:
 
 						# Condition for JPG Images
 						if file.endswith(".jpg"):
@@ -176,7 +176,7 @@ def dMap(dlet):
 							pass
 
 					# Bitmap Extraction..
-					elif i==7:
+					if i==7:
 
 						# Condition for BMP Images
 						if file.endswith(".bmp"):
@@ -187,7 +187,7 @@ def dMap(dlet):
 							pass
 
 					# PNG Extraction..
-					elif i==8:
+					if i==8:
 
 						# Condition for PNG Images
 						if file.endswith(".png"):
