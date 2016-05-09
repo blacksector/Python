@@ -1,6 +1,12 @@
 # Wayne Kenney
 # USE (Unique String Encryption)
 
+import os
+
+# [?] Function for copying encrypted text to clipboard
+def addToClipBoard(text):
+    command = 'echo ' + text.strip() + '| clip'
+    os.system(command)
 
 def decr():
 	# Declare input string
@@ -13,8 +19,10 @@ def decr():
 	for c in x:
 		n = ord(c)
 		# if 'a' contained in input string then..
-		if c == "b":
+		if c == "a":
 			# then append to array
+			ar.append("z")
+		elif c == "b":
 			ar.append('a')
 		elif c == "c":
 			ar.append("b")
@@ -66,14 +74,25 @@ def decr():
 			ar.append("y")
 		elif c == "0":
 			ar.append(" ")
+		elif c == "1":
+			ar.append(",")
+		elif c == "2":
+			ar.append(".")
+		elif c == "3":
+			ar.append("'")
+		elif c == "4":
+			ar.append("?")
+		elif c == "5":
+			ar.append("!")
+
 
 	# Display all appended in array
 	decrypted = ''.join(ar)
 
 	# Display encrypted Text
-	print "Your decrypted text: %s" % (decrypted)
+	print "\nYour decrypted text: %s" % (decrypted)
 
-	d = raw_input("OK?")
+	d = raw_input("\nOK?")
 
 
 
@@ -88,67 +107,81 @@ def encr():
 	for c in x:
 		n = ord(c)
 		# if 'a' contained in input string then..
-		if c == "a":
+		if c == "a" or c == "A":
 			# then append to array
 			ar.append('b')
-		elif c == "b":
+		elif c == "b" or c == "B":
 			ar.append("c")
-		elif c == "c":
+		elif c == "c" or c == "C":
 			ar.append("d")
-		elif c == "d":
+		elif c == "d" or c == "D":
 			ar.append("e")
-		elif c == "e":
+		elif c == "e" or c == "E":
 			ar.append("f")
-		elif c == "f":
+		elif c == "f" or c == "F":
 			ar.append("g")
-		elif c == "g":
+		elif c == "g" or c == "G":
 			ar.append("h")
-		elif c == "h":
+		elif c == "h" or c == "H":
 			ar.append("i")
-		elif c == "i":
+		elif c == "i" or c == "I":
 			ar.append("j")
-		elif c == "j":
+		elif c == "j" or c == "J":
 			ar.append("k")
-		elif c == "k":
+		elif c == "k" or c == "K":
 			ar.append("l")
-		elif c == "l":
+		elif c == "l" or c == "L":
 			ar.append("m")
-		elif c == "m":
+		elif c == "m" or c == "M":
 			ar.append("n")
-		elif c == "n":
+		elif c == "n" or c == "N":
 			ar.append("o")
-		elif c == "o":
+		elif c == "o" or c == "O":
 			ar.append("p")
-		elif c == "p":
+		elif c == "p" or c == "P":
 			ar.append("q")
-		elif c == "q":
+		elif c == "q" or c == "Q":
 			ar.append("r")
-		elif c == "r":
+		elif c == "r" or c == "R":
 			ar.append("s")
-		elif c == "s":
+		elif c == "s" or c == "S":
 			ar.append("t")
-		elif c == "t":
+		elif c == "t" or c == "T":
 			ar.append("u")
-		elif c == "u":
+		elif c == "u" or c == "U":
 			ar.append("v")
-		elif c == "v":
+		elif c == "v" or c == "V":
 			ar.append("w")
-		elif c == "w":
+		elif c == "w" or c == "W":
 			ar.append("x")
-		elif c == "x":
+		elif c == "x" or c == "X":
 			ar.append("y")
-		elif c == "y":
+		elif c == "y" or c == "Y":
 			ar.append("z")
-		elif c == "z":
-			ar.append("0")
+		elif c == "z" or c == "Z":
+			ar.append("a")
 		elif c == " ":
 			ar.append("0")
+		elif c == ",":
+			ar.append("1")
+		elif c == ".":
+			ar.append("2")
+		elif c == "'":
+			ar.append("3")
+		elif c == "?":
+			ar.append("4")
+		elif c == "!":
+			ar.append("5")
 
 	# Display all appended in array
 	encrypted = ''.join(ar)
 
 	# Display encrypted Text
-	print "Your encrypted text: %s" % (encrypted)
+	print "\nYour encrypted text: %s" % (encrypted)
+
+	print "\nEncrypted text copied to clipboard.\n"
+	# Copy text to clipboard
+	addToClipBoard(encrypted)
 
 	d = raw_input("OK?")
 
