@@ -65,7 +65,7 @@ def decr():
 		elif c == "z":
 			ar.append("y")
 		elif c == "0":
-			ar.append("z")
+			ar.append(" ")
 
 	# Display all appended in array
 	decrypted = ''.join(ar)
@@ -140,6 +140,8 @@ def encr():
 		elif c == "y":
 			ar.append("z")
 		elif c == "z":
+			ar.append("0")
+		elif c == " ":
 			ar.append("0")
 
 	# Display all appended in array
