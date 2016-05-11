@@ -1,4 +1,5 @@
 # Wayne Kenney
+# 5/3/2016
 # USE (Unique String Encryption)
 
 import os
@@ -10,7 +11,7 @@ def addToClipBoard(text):
 
 def decr():
 	# Declare input string
-	x = raw_input("Enter Message to Decrypt: ")
+	x = raw_input("\nEnter Message to Decrypt: ")
 
 	# Array declared
 	ar = []
@@ -92,13 +93,11 @@ def decr():
 	# Display encrypted Text
 	print "\nYour decrypted text: %s" % (decrypted)
 
-	d = raw_input("\nOK?")
-
 
 
 def encr():
 	# Declare input string
-	x = raw_input("Enter Message to Encrypt: ")
+	x = raw_input("\nEnter Message to Encrypt: ")
 
 	# Array declared
 	ar = []
@@ -183,11 +182,16 @@ def encr():
 	# Copy text to clipboard
 	addToClipBoard(encrypted)
 
-	d = raw_input("OK?")
 
+while(True):
+	
+	cmd = raw_input("Enter command (? for help): ")
 
-cmd = raw_input("Enter command: ")
-if cmd == "encrypt":
-	encr()
-elif cmd == "decrypt":
-	decr()
+	if cmd == "encrypt":
+		encr()
+	elif cmd == "decrypt":
+		decr()
+	elif cmd == "?" or cmd == "help":
+		print "\n Commands:\n\n encrypt (input for encryption)\n decrypt (input for decryption\n"
+	else:	
+		print "\n [!] Invalid command. Try again. \n"
