@@ -13,6 +13,9 @@
 # A video (configurable) appears in your web browser and...
 # Your keyboard/mouse are disabled forcing you to view the video.
 
+# This script is harmless
+
+
 # Load modules
 from ctypes import *
 import pythoncom
