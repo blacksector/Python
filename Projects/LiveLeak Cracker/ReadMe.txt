@@ -13,4 +13,6 @@ Step 2 - Run script and input "start".
 
 Step 3 - Wait for authentication.
 
+(Disclaimer: Not for illegal uses! Intended for personal security testing.)
+
 - Wayne Kenney
