@@ -54,8 +54,6 @@ def enaB(event):
 
 # Key input function
 def KeyIN(event):
-
-	# Globalize title for use
 	global a
 
 	# How many keystrokes
