@@ -77,8 +77,11 @@ def cpPrompt():
 		#Start mass-search with 'go'
 		elif cmd == 'go':
 
-			#Search loop (Visit 999 Users)...
-			for i in range(1,999):
+			# Profile Cycle Count
+			cnt = 0
+
+			#Search loop
+			while(True):
 	
 			#Request Payloads:
 			#[
@@ -103,7 +106,11 @@ def cpPrompt():
 				
 				#Setup get query
 				go = 'https://www.okcupid.com/profile/%s' % (grab)
-				print go
+				
+				cnt = cnt + 1
+
+				print "%s - %s" % (go,cnt)
+
 				#Check profile
 				processReq.page = c.get(go)
 				#Pause 
