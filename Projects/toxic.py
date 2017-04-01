@@ -38,6 +38,57 @@ from tqdm import tqdm
 print '\nPyAqua-1.0 - Requests Module Prototype\nBy Pythogen'
 
 
+print "\n -= Newgrounds Toxic Framework =-\n"
+time.sleep(1)
+print "       ._              ___"
+print "    .*' .*        _.-*."
+print "   (   (       .-' .' (    __"
+print "    .   `-._.-*   /    `-*'  `*-."
+print " -._.*        _.-'        .-.    `-."
+print "           .-'         _.'   `-._   `-."
+print " \       .'                      `*-.__`-._"
+print "     _.._    /       -.                "
+print "   .'-._ `. :   :      `.         :      `+."
+print "  /     `. \:    \           `-.   \ `-.    "
+print " ||| Gathers Data - Sends Data |||"
+time.sleep(1)
+print " :        \ ;  \  ;    `. `.    \   `.__\    ;"
+print "           ;;   ;     `-.\  \ _.-:* '   `:`._:"
+print "        .-*:  ' :   \    ;;-*' *.       .-,"
+print "       '   :  ; ;   /:.-'        `        ;"
+print "           ; /     :     _.--s+.        .s:"
+print " :        / :  :   ;    \   dPT$b.    \d$PTb"
+#time.sleep(1)
+print "  \     .'  ;  ;   ;     `.:$bd$$$b    `Tbd$"
+print "   `._.'   /  /    :       `*^^^^*' ,    `T$"
+print "   .-'    : .'      \                      `-._"
+print "  /      .+'         \                         \ "
+print " ||| Communicates with Server - Database |||"
+time.sleep(1)
+print " :      /            \`._                       ;"
+print "       :          `.  ;                        /"
+print "               ;    \ :              ;  ,s*' .'"
+print "         '    /      :;              `. '   ("
+print "        /   .'       :                   .-*-*."
+print "     .-' .-'         ;                .-'      ;"
+print " ||| Automatic Voting - Automatic Daily Deposit |||"
+time.sleep(1)
+print "   .'   /      /    /            ._.-'   _.---("
+print "  /    :    .-'   .'         '      *--*''      :"
+print " :         /     /`.                `-.__.--._.'"
+print "                :   `.                       ;"
+print "          '     ;     `-.                    :"
+print "         /;     :        `---..._______...--*'"
+print "      .-'/`      \            /"
+print " ||| Review Flood - Data Exhaustion Exploit |||"
+time.sleep(1)
+print "    .'  /  \      `._        :  "
+print "   /  .'    `.   .-*'        ;"
+print "  :  :        \   \ "
+print "  ;  ;         ;   ;        :"
+print " ||| By Pythogen - Wayne Kenney - 2017 |||"
+
+
 
 def id_generator(size=5118, chars=string.ascii_uppercase + string.digits):
 	return ''.join(random.choice(chars) for _ in range(size))
@@ -92,10 +143,7 @@ def cpPrompt():
 		#Command Construct
 		if cmd == '?':
 			#Show list of commands
-			print '\n- who (Users Online)\n- quit\n'
-		elif cmd == 'who':
-			#Call function to extract data between tags. Function name included in var for global access
-			print '\n' + find_between( processReq.page.content,"Online: (<strong>","</strong>)" ) + '\n'
+			print '\n- comment\n- post\n- vote\n- quit\n'
 		elif cmd == 'quit':
 			quit()
 
@@ -125,11 +173,8 @@ def cpPrompt():
 					'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.101 Safari/537.36',
 					'Referer': 'http://fearnova.newgrounds.com/news/post/983077',
 					'Origin': 'http://fearnova.newgrounds.com',
-					'Host': 'fearnova.newgrounds.com',
-				
-					# IMPORTANT: Cookie must be updated when request conflict occurs (Solution has yet to be discovered)
+					'Host': 'fearnova.newgrounds.com',				
 					'Cookie': '__cfduid=db3173c13b913db562a4ced4cb261393c1490501067; ng_adcode_country_id=2; NGBBS_timestamp=1490573252; NGBBS_last_visit=1490573252; remember_me_checkbox=1; vmk1du5I8m=mjWW4xODdIo7UxBr6Zvztp2Mo%2F3m5rhUJjpJFyd6RsKAnDsF9yA6D132Ukpu4wLikJwsjZapdF_QtWdBnmjvLhIMUZwO0czHg0ZC3dTBackefdh8xP35nAsnHfQR6cbHZQDjqCq43LzhQA47KjAoUIQJ6EzL0KsGbd_1m7A%2F1Tw%3D; __utma=158261541.1985287000.1490501068.1490612103.1490636898.13; __utmb=158261541.60.9.1490638145991; __utmc=158261541; __utmz=158261541.1490636898.13.13.utmcsr=fearnova.newgrounds.com|utmccn=(referral)|utmcmd=referral|utmcct=/; vmkIdu5l8m=6FnAK022VZL3N7Wdhpi9bG9JX44DNwJlq05YpS5QrRe2bSY_OuibIi7C0GEIC69eVfR7HdJI7zdN0rfl7YpbqULGdxZ1eo3hSBwpoCg2EpsXD5VbEQuzri9S97FqfJaR4e02iP9PCuWC4LpO8mkEhvTH46MSypyKnBsuztVS_RA%3D; NG_GG_username=fearnova; ng_user0=a%3A2%3A%7Bs%3A7%3A%22default%22%3Ba%3A0%3A%7B%7Ds%3A10%3A%22Art_portal%22%3Ba%3A1%3A%7Bs%3A21%3A%22suitabilities_to_view%22%3Ba%3A3%3A%7Bi%3A0%3Bs%3A1%3A%22e%22%3Bi%3A1%3Bs%3A1%3A%22t%22%3Bi%3A2%3Bs%3A1%3A%22m%22%3B%7D%7D%7D; __utmt=1; __utma=132636953.309726048.1490501336.1490609071.1490636892.10; __utmb=132636953.54.10.1490636892; __utmc=132636953; __utmz=132636953.1490564721.7.4.utmcsr=wayne.newgrounds.com|utmccn=(referral)|utmcmd=referral|utmcct=/news/post/944254',
-					
 					'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
 					'Content-Length': '302',
 					'Connection': 'keep-alive',
@@ -210,11 +255,12 @@ def cpPrompt():
 
 			
 			# Under Construction...
-			ukey = find_between( srcc.content,'/portal/reviews/rate','name="portal_id')
-			ukey2 = find_between(ukey,'value="','/>')
-			ukey = ukey2[:-1]
-			
+			# IMPORTANT: Cookie must be updated when request conflict occurs (Solution has yet to be discovered)
+			#ukey = find_between( srcc.content,'/portal/reviews/rate','name="portal_id')
+			#ukey2 = find_between(ukey,'value="','/>')
+			#ukey = ukey2[:-1]
 
+			ukey2 = '9e788%Oe05db86fbc8f%945aOc54897a16f%Pd304ar9d%%682c14%7%3%14f%6656s2a321eacOb7e7r5746rs%90d36c%%s1%8%ab3d35db687rdPd67e%7drP6fdb07cr00e01eebf94f960be7babc022d95c1655%s%4d7P%%O%rr673635990235586052'
 			titleName = find_between( srcc.content,'<title>','</title>')
 			voteseed = find_between( srcc.content, 'vote_seed" value', '/>' )
 			voteseed = voteseed[:-1]
@@ -245,12 +291,12 @@ def cpPrompt():
 				#'vote': '8506bf20e534bbc2ec29fec1c6e93da4',
 			}
 
-			#userkey:b2888%Ob05ddf6ffb3e%745aOc54597a7ff%Pd380br96%%682c14%7%7%14f%2c56s5a360e64Obc1cr5748rs%171364%%s5%8%ac3d35db78er0Pdfed%76rP6fd221cr00e01eebf94f960be7babc022d95c1655%s%4d7P%%O%rr933235990235593795
-			#vote_seed:58dc3a02efbbb
-			#vote_key:MgXoWvVmI2bTYxZmVmQjVjYitxN20zYjg2NzA7MTNfNDtxZjI4NmZiKzJWMjM5YmUwNjlfODMxYjFCNzA4OGRmNzc3MjgwOTQxcV9CKzFWYjsyOWZtODY2
-			#item_id:690958
-			#portal_id:1
-			#vote:968df160ae1449fe25e643d1ab7879fd
+#userkey:b2888%Ob05ddf6ffb3e%745aOc54597a7ff%Pd380br96%%682c14%7%7%14f%2c56s5a360e64Obc1cr5748rs%171364%%s5%8%ac3d35db78er0Pdfed%76rP6fd221cr00e01eebf94f960be7babc022d95c1655%s%4d7P%%O%rr933235990235593795
+#vote_seed:58dc3a02efbbb
+#vote_key:MgXoWvVmI2bTYxZmVmQjVjYitxN20zYjg2NzA7MTNfNDtxZjI4NmZiKzJWMjM5YmUwNjlfODMxYjFCNzA4OGRmNzc3MjgwOTQxcV9CKzFWYjsyOWZtODY2
+#item_id:690958
+#portal_id:1
+#vote:968df160ae1449fe25e643d1ab7879fd
 
 			print "\ntitleName: %s\n" % (titleName)
 
@@ -264,6 +310,8 @@ def cpPrompt():
 			r = requests.post("http://www.newgrounds.com/portal/vote", data=data3, headers=header_data4)
 			print r
 			print r.content
+
+			print "\nVote casted homie!\n"
 	
 #Used for finding values between tags
 def find_between( s, first, last ):
@@ -276,13 +324,12 @@ def find_between( s, first, last ):
 
 
 def processReq():
-	#Authentication
+
 	USERNAME = raw_input("Enter Username: ")
 	PASSWORD = raw_input("Enter Password: ")
 
 	#Shorten method
 	with requests.Session() as c:
-	
 
 		#POST Login data
 		login_data = \
